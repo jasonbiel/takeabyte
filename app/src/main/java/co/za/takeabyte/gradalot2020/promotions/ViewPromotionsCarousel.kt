@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import co.za.takeabyte.gradalot2020.R
 import co.za.takeabyte.gradalot2020.promotions.adapter.AdapterPromotions
+import co.za.takeabyte.gradalot2020.promotions.itemdecoration.ItemDecorationPromotion
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import co.za.takeabyte.gradalot2020.promotions.viewmodel.ViewModelPromotions
 import kotlinx.android.synthetic.main.promotions_layout.view.*
@@ -47,6 +49,11 @@ class ViewPromotionsCarousel(
         rootView.promotionsRecyclerView.layoutManager = LinearLayoutManager(rootView.context).apply {
             orientation = LinearLayoutManager.HORIZONTAL
         }
+
+        rootView.promotionsRecyclerView.addItemDecoration(ItemDecorationPromotion(rootView.context))
+
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(rootView.promotionsRecyclerView)
     }
 
     private fun initPromotionsTitle() {

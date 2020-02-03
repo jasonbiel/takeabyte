@@ -6,9 +6,13 @@
     android:id="@+id/promotionsItemRootView"
     android:layout_width="match_parent"
     android:layout_height="@dimen/promotions_item_height"
-    android:background="?attr/selectableItemBackgroundBorderless"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/promotions_card_elevation"
+    app:cardCornerRadius="@dimen/promotions_card_corner_radius"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
