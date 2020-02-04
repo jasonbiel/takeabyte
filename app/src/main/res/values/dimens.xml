@@ -6,4 +6,6 @@
     <dimen name="margin_large">16dp</dimen>
     <dimen name="promotions_card_elevation">8dp</dimen>
     <dimen name="promotions_card_corner_radius">5dp</dimen>
+
+    <dimen name="product_description_image">250dp</dimen>
 </resources>

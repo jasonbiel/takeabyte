@@ -1,5 +1,6 @@
 package co.za.takeabyte.gradalot2020;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import co.za.takeabyte.gradalot2020.productdescription.ProductDescriptionActivity;
 import co.za.takeabyte.gradalot2020.promotions.ViewPromotionsCarousel;
 import co.za.takeabyte.gradalot2020.promotions.listener.OnPromotionsListener;
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem;
@@ -30,7 +32,15 @@ public class HomeActivity extends AppCompatActivity implements OnPromotionsListe
 
     @Override
     public void onPromotionsItemSelected(@NonNull UIModelPromotionItem model) {
-        Toast.makeText(this, model.getTitle(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ProductDescriptionActivity.class);
+
+        Bundle pdpBundle = new Bundle();
+        pdpBundle.putString(ProductDescriptionActivity.PRODUCT_DESCRIPTION_TITLE, model.getTitle());
+        pdpBundle.putInt(ProductDescriptionActivity.PRODUCT_DESCRIPTION_IMAGE, model.getImageRes());
+
+        intent.putExtra(ProductDescriptionActivity.PRODUCT_DESCRIPTION_BUNDLE, pdpBundle);
+
+        startActivity(intent);
     }
 
     @Override
@@ -39,7 +49,7 @@ public class HomeActivity extends AppCompatActivity implements OnPromotionsListe
     }
 
     private void addAndRenderPromotionsCarousel() {
-        if(homeRoot != null) {
+        if (homeRoot != null) {
             ViewModelPromotions viewModelPromotions = new ViewModelProvider(this)
                     .get(ViewModelPromotions.class);
 
