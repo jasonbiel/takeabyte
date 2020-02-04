@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="promotions_item_height">172dp</dimen>
+    <dimen name="promotions_item_image_width">172dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="promotions_card_elevation">8dp</dimen>
+    <dimen name="promotions_card_corner_radius">5dp</dimen>
+</resources>
