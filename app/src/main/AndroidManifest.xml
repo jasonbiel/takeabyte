@@ -16,5 +16,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".productdescription.ProductDescriptionActivity" />
+
+        <activity android:name=".deals.DealsActivity" />
+
     </application>
 </manifest>
