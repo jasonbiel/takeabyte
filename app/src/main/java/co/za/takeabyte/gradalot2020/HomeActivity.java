@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import co.za.takeabyte.gradalot2020.deals.DealsActivity;
 import co.za.takeabyte.gradalot2020.productdescription.ProductDescriptionActivity;
 import co.za.takeabyte.gradalot2020.promotions.ViewPromotionsCarousel;
 import co.za.takeabyte.gradalot2020.promotions.listener.OnPromotionsListener;
@@ -45,7 +46,8 @@ public class HomeActivity extends AppCompatActivity implements OnPromotionsListe
 
     @Override
     public void onPromotionsAllDealsSelected() {
-        Toast.makeText(this, "All deals selected", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DealsActivity.class);
+        startActivity(intent);
     }
 
     private void addAndRenderPromotionsCarousel() {
