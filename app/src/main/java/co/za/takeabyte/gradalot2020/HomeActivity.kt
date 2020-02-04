@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import co.za.takeabyte.gradalot2020.deals.DealsActivity
 import co.za.takeabyte.gradalot2020.productdescription.ProductDescriptionActivity
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import co.za.takeabyte.gradalot2020.promotions.viewmodel.ViewModelPromotions
@@ -39,6 +40,9 @@ class HomeActivity : AppCompatActivity() {
 
     private val onAllDealsSelected: () -> Unit = {
         Toast.makeText(this, "All Deals Selected", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, DealsActivity::class.java)
+        startActivity(intent)
     }
 
     private val onPromotionItemSelected: (UIModelPromotionItem) -> Unit = { model ->
