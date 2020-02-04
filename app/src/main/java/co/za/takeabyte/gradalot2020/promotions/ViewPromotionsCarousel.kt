@@ -16,6 +16,8 @@ import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import co.za.takeabyte.gradalot2020.promotions.viewmodel.ViewModelPromotions
 import kotlinx.android.synthetic.main.promotions_layout.view.*
 
+// TODO: Promotions Title is not displaying
+
 class ViewPromotionsCarousel(
     parentViewGroup: ViewGroup,
     viewModel: ViewModelPromotions,
@@ -70,7 +72,6 @@ class ViewPromotionsCarousel(
                 rootView.promotionsShimmer.visibility = View.GONE
 
                 rootView.promotionsAllDeals.visibility = View.VISIBLE
-                rootView.promotionsTitle.visibility = View.VISIBLE
 
                 (rootView.promotionsRecyclerView.adapter as? AdapterPromotions)?.setDataSet(models)
                 rootView.promotionsRecyclerView.visibility = View.VISIBLE

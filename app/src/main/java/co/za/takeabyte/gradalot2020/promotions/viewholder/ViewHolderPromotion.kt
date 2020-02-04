@@ -8,6 +8,8 @@ import co.za.takeabyte.gradalot2020.R
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import kotlinx.android.synthetic.main.promotions_item_layout.view.*
 
+// TODO: Promotion Item price is not displaying.
+
 class ViewHolderPromotion(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bindView(
@@ -25,7 +27,6 @@ class ViewHolderPromotion(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         itemView.promotionsItemImage.setImageResource(model.imageRes)
         itemView.promotionsItemTitle.text = model.title
-        itemView.promotionsItemPrice.text = model.getDisplayPrice()
         itemView.promotionsItemRootView.setOnClickListener {
             onItemSelectedListener.invoke(itemView.promotionsItemImage, model)
         }
