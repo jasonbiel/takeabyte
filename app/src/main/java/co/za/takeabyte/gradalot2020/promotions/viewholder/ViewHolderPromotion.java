@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import co.za.takeabyte.gradalot2020.R;
@@ -30,6 +31,9 @@ public class ViewHolderPromotion extends RecyclerView.ViewHolder {
         if (promotionsItemImage != null &&
                 promotionsItemPrice != null &&
                 promotionsItemTitle != null) {
+
+            ViewCompat.setTransitionName(promotionsItemImage, itemView.getContext().getResources().getString(R.string.transition_name_image).replace("%s", "" + getAdapterPosition()));
+
             promotionsItemImage.setImageResource(model.getImageRes());
             promotionsItemTitle.setText(model.getTitle());
             promotionsItemPrice.setText(model.getDisplayPrice());

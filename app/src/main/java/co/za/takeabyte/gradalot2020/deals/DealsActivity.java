@@ -1,6 +1,7 @@
 package co.za.takeabyte.gradalot2020.deals;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,11 @@ import co.za.takeabyte.gradalot2020.deals.adapter.AdapterDeals;
 import co.za.takeabyte.gradalot2020.deals.viewmodel.ViewModelDeals;
 import co.za.takeabyte.gradalot2020.promotions.listener.OnPromotionsListener;
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem;
+
+//TODO: Selecting a Product should show ProductDescription Activity.
+//TODO: Product item selection requires ripple effect.
+
+//TODO: Bonus, add Activity shared element transition.
 
 public class DealsActivity extends AppCompatActivity implements IDealsView, OnPromotionsListener {
 
@@ -47,7 +53,7 @@ public class DealsActivity extends AppCompatActivity implements IDealsView, OnPr
     }
 
     @Override
-    public void onPromotionsItemSelected(@NonNull UIModelPromotionItem model) {
+    public void onPromotionsItemSelected(@NonNull ImageView imageView, @NonNull UIModelPromotionItem model) {
         Toast.makeText(this, "Selected - " + model.getTitle(), Toast.LENGTH_LONG).show();
     }
 

@@ -3,6 +3,7 @@ package co.za.takeabyte.gradalot2020.promotions.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,7 +44,10 @@ public class AdapterPromotions extends RecyclerView.Adapter<ViewHolderPromotion>
                 @Override
                 public void onClick(View view) {
                     if (onPromotionsListener != null) {
-                        onPromotionsListener.onPromotionsItemSelected(model);
+                        ImageView imageView = view.findViewById(R.id.promotionsItemImage);
+                        if (imageView != null) {
+                            onPromotionsListener.onPromotionsItemSelected(imageView, model);
+                        }
                     }
                 }
             });
