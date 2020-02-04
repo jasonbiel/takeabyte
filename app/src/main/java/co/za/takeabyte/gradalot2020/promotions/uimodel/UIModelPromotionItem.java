@@ -23,10 +23,6 @@ public class UIModelPromotionItem {
         this.price = price;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
     public void setTitle(@NonNull String title) {
         this.title = title;
     }

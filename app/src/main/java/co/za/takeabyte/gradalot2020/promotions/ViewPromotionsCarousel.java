@@ -26,6 +26,8 @@ import co.za.takeabyte.gradalot2020.promotions.listener.OnPromotionsListener;
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem;
 import co.za.takeabyte.gradalot2020.promotions.viewmodel.ViewModelPromotions;
 
+// TODO: Promotion Title is not being displayed?
+
 public class ViewPromotionsCarousel {
     private View rootView;
 
@@ -136,7 +138,6 @@ public class ViewPromotionsCarousel {
                         promotionsShimmer.setVisibility(View.GONE);
 
                         promotionsAllDeals.setVisibility(View.VISIBLE);
-                        promotionsTitle.setVisibility(View.VISIBLE);
 
                         if (promotionsRecyclerView.getAdapter() != null &&
                                 promotionsRecyclerView.getAdapter() instanceof AdapterPromotions) {

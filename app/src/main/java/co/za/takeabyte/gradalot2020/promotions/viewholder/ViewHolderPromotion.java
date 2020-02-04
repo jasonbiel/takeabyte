@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import co.za.takeabyte.gradalot2020.R;
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem;
 
+// TODO: Promotions item price is not displaying.
+
 public class ViewHolderPromotion extends RecyclerView.ViewHolder {
 
     private ViewGroup promotionsItemRoot;
@@ -36,7 +38,6 @@ public class ViewHolderPromotion extends RecyclerView.ViewHolder {
 
             promotionsItemImage.setImageResource(model.getImageRes());
             promotionsItemTitle.setText(model.getTitle());
-            promotionsItemPrice.setText(model.getDisplayPrice());
         }
     }
 
