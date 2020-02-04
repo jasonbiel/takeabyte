@@ -1,6 +1,7 @@
 package co.za.takeabyte.gradalot2020.deals
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -10,6 +11,11 @@ import co.za.takeabyte.gradalot2020.deals.adapter.AdapterDeals
 import co.za.takeabyte.gradalot2020.deals.viewmodel.ViewModelDeals
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import kotlinx.android.synthetic.main.deals_layout.*
+
+//TODO: Selecting a Product should show ProductDescription Activity.
+//TODO: Product item selection requires ripple effect.
+
+//TODO: Bonus, add Activity shared element transition.
 
 class DealsActivity : AppCompatActivity(), IDealsView {
 
@@ -33,9 +39,10 @@ class DealsActivity : AppCompatActivity(), IDealsView {
         dealsContentContainer.adapter = AdapterDeals(onPromotionItemSelected)
     }
 
-    private val onPromotionItemSelected: (UIModelPromotionItem) -> Unit = { model ->
-        Toast.makeText(this, "Selected - ${model.title}", Toast.LENGTH_SHORT).show()
-    }
+    private val onPromotionItemSelected: (ImageView, UIModelPromotionItem) -> Unit =
+        { imageView, model ->
+            Toast.makeText(this, "Selected - ${model.title}", Toast.LENGTH_SHORT).show()
+        }
 
     override fun renderContentItems(items: List<UIModelPromotionItem>) {
         val adapter = dealsContentContainer.adapter

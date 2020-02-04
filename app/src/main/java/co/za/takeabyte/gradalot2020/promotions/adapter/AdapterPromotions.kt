@@ -2,13 +2,14 @@ package co.za.takeabyte.gradalot2020.promotions.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import co.za.takeabyte.gradalot2020.R
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import co.za.takeabyte.gradalot2020.promotions.viewholder.ViewHolderPromotion
 
 class AdapterPromotions(
-    private val onPromotionItemSelected: (UIModelPromotionItem) -> Unit
+    private val onPromotionItemSelected: (ImageView, UIModelPromotionItem) -> Unit
 ) : RecyclerView.Adapter<ViewHolderPromotion>() {
     private var dataSet: List<UIModelPromotionItem> = emptyList()
 

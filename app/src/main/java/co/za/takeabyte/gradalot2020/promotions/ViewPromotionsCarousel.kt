@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +20,7 @@ class ViewPromotionsCarousel(
     parentViewGroup: ViewGroup,
     viewModel: ViewModelPromotions,
     private val onAllDealsSelected: () -> Unit,
-    private val onPromotionItemSelected: (UIModelPromotionItem) -> Unit
+    private val onPromotionItemSelected: (ImageView, UIModelPromotionItem) -> Unit
 ) {
     val rootView: View = LayoutInflater.from(parentViewGroup.context).inflate(
         R.layout.promotions_layout,

@@ -1,18 +1,33 @@
 package co.za.takeabyte.gradalot2020.promotions.viewholder
 
 import android.view.View
+import android.widget.ImageView
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
+import co.za.takeabyte.gradalot2020.R
 import co.za.takeabyte.gradalot2020.promotions.uimodel.UIModelPromotionItem
 import kotlinx.android.synthetic.main.promotions_item_layout.view.*
 
 class ViewHolderPromotion(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bindView(model: UIModelPromotionItem, onItemSelectedListener: (UIModelPromotionItem) -> Unit) {
+    fun bindView(
+        model: UIModelPromotionItem,
+        onItemSelectedListener: (ImageView, UIModelPromotionItem) -> Unit
+    ) {
+
+        ViewCompat.setTransitionName(
+            itemView.promotionsItemImage,
+            itemView.context.resources.getString(R.string.transition_name_image).replace(
+                "%s",
+                "$adapterPosition"
+            )
+        )
+
         itemView.promotionsItemImage.setImageResource(model.imageRes)
         itemView.promotionsItemTitle.text = model.title
         itemView.promotionsItemPrice.text = model.getDisplayPrice()
         itemView.promotionsItemRootView.setOnClickListener {
-            onItemSelectedListener.invoke(model)
+            onItemSelectedListener.invoke(itemView.promotionsItemImage, model)
         }
     }
 }
